@@ -1,0 +1,116 @@
+body {
+    line-height: 100%;
+    background: #5e90bc;
+    background: linear-gradient(180deg,rgba(94, 144, 188, 1) 0%, rgba(127, 176, 219, 1) 100%);
+}
+
+main {
+    min-height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 50px;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(34,35,51,0.3);
+}
+
+.container {
+    max-width: 600px;
+    height: 600px;
+    width: 100%;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    text-align: left;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.container h2 {
+    color: #222333;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.container button {
+    padding: 3px 10px;
+    border: 1px solid darkgrey;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, #fdfdfd 0%, #e4e4e4 80%, #ffffff 100%);
+    box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+section,
+.add-items_block,
+.manage-items_block {
+    width: 100%;
+}
+
+section.manage {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.manage-items_block {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-items_block label,
+.manage-items_block h3 {
+    color: #222333;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.add-items_input,
+.manage-items_output {
+    display: flex;
+    gap: 30px;
+}
+
+.manage-items_output {
+    height: 100%;
+}
+
+#addItemsInput,
+#itemsList {
+    width: 65%;
+    padding: 4px;
+    border: 1px solid darkgrey;
+    border-radius: 2px;
+    font-size: 16px;
+}
+
+#addItemsInput {
+    display: block;
+}
+
+#addItemsInput::placeholder {
+    font-size: 16px;
+}
+
+
+#sortByNameButton {
+    margin-bottom: 15px;
+}
+
+#sortByValueButton {
+    margin-bottom: 30px;
+}
+

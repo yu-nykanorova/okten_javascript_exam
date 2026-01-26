@@ -1,0 +1,43 @@
+@media screen and (max-width: 769px) {
+    main {
+        padding: 50px 30px;
+    }
+
+    h1 {
+        margin-bottom: 40px;
+        font-size: 28px;
+    }
+
+    .container {
+        height: 500px;
+        padding: 40px 30px;
+    }
+
+    .container h2 {
+        font-size: 18px;
+    }
+
+    .container button {
+        padding: 3px 7px;
+        font-size: 12px;
+    }
+
+    .add-items_block label,
+    .manage-items_block h3 {
+        font-size: 12px;
+    }
+
+    .add-items_input,
+    .manage-items_output {
+        gap: 20px;
+    }
+
+    #addItemsInput,
+    #itemsList {
+        font-size: 14px;
+    }
+
+    #addItemsInput::placeholder {
+        font-size: 14px;
+    }
+}

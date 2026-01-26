@@ -1,0 +1,52 @@
+@media screen and (max-width: 480px) {
+    main {
+        padding: 20px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 22px;
+        line-height: 110%;
+    }
+
+    .container {
+        padding: 15px;
+        align-items: center;
+    }
+
+    .container h2 {
+        font-size: 16px;
+    }
+
+    .add-items_input,
+    .manage-items_output {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #addItemsInput,
+    #itemsList {
+        width: 100%;
+    }
+
+    #itemsList {
+        min-height: 60%;
+    }
+
+    #addItemsInput::placeholder {
+        font-size: 14px;
+    }
+
+    .manage-items_buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #sortByNameButton,
+    #sortByValueButton,
+    #deleteButton {
+        margin: 0;
+    }
+}
