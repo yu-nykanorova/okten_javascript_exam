@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --c-dark: #2a2922;
+    --c-light: #ffffff;
+    --c-brand: #f3ebdd;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--c-brand);
+    color: var(--c-dark);
+}
+
+main {
+    min-height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#usersList {
+    max-width: 900px;
+    width: 100%;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.user-card {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--c-light);
+    border-radius: 4px;
+}
+
+.user-card p {
+    padding-bottom: 3px;
+    font-size: 20px;
+    position: relative;
+}
+
+.user-card p::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--c-dark);
+}
+
+.user-card h2 {
+    text-align: center;
+}
+
+.user-card a {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: var(--c-dark);
+    font-size: 18px;
+    color: var(--c-light);
+}
+

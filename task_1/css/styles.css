@@ -115,7 +115,7 @@ section.manage {
 }
 
 #itemsList {
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 #itemsList li {
