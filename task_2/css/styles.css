@@ -6,13 +6,18 @@
 
     --c-dark: #20232a;
     --c-light: #f8f8f5;
-    --c-brand: #9cb1b1;
-    --c-brand-dark: #a01d26;
+    --c-brand-grey: #678383;
+    --c-brand-red: #a01d26;
+
+    --transition: all .2s ease-in-out;
 }
 
 body {
     font-family: var(--font-main);
-    background-color: var(--c-light);
+    background-image: url("../images/bg_envelopes.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 main {
@@ -23,7 +28,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(32, 35, 42, 0.6);
     color: var(--c-dark);
 }
 
@@ -49,6 +53,7 @@ h1 {
     gap: 30px;
     background-color: var(--c-light);
     border-radius: 8px;
+    box-shadow: 5px 5px 9px -3px rgba(0,0,0,0.6);
 }
 
 .user-card p {
@@ -73,7 +78,7 @@ h1 {
 .user-card h2 {
     font-family: var(--font-secondary);
     text-align: center;
-    color: var(--c-brand-dark);
+    color: var(--c-brand-red);
 }
 
 .user-card a {
@@ -86,12 +91,195 @@ h1 {
     gap: 10px;
     text-align: center;
     border-radius: 4px;
-    background-color: var(--c-brand);
     font-size: 20px;
     color: var(--c-light);
+    background-color: var(--c-brand-grey);
+    box-shadow: 3px 3px 5px -3px rgba(0,0,0,0.6);
+    transition: var(--transition);
+}
+
+.user-card a:hover {
+    background-color: var(--c-brand-red);
 }
 
 .user-card a span {
     font-size: 20px;
+}
+
+#userInfo {
+    width: 100%;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: var(--c-light);
+    border-radius: 8px;
+    box-shadow: 5px 5px 9px -3px rgba(0,0,0,0.6);
+}
+
+#userInfoBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#userPersonalInfo {
+    flex: 60%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    border: 2px solid rgba(32, 35, 42, 0.8);
+    border-radius: 8px 0 0 8px;
+}
+
+#userPersonalInfo p:not(#userId, #userSecondName) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+}
+
+#userPersonalInfo svg {
+    width: 20px;
+    fill: var(--c-brand-red);
+}
+
+#userPersonalInfo h2 {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+#userId {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+#userName {
+    margin: 10px 0;
+    text-align: left;
+    color: var(--c-brand-red);
+    text-shadow: 1px 1px 0 rgba(4, 5, 0, 0.6);
+}
+
+#userSecondName {
+    font-size: 26px;
+    color: var(--c-brand-grey);
+    text-shadow: 1px 1px 0 rgba(4, 5, 0, 0.6);
+}
+
+#userCompany {
+    flex: 40%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: var(--c-light);
+    background-color: rgba(32, 35, 42, 0.8);
+    border-radius: 0 8px 8px 0;
+}
+
+#userCompany p:first-of-type {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+#userCompany h2 {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+
+#userCompany h2::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -22px;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: calc(100% + 44px);
+    background-color: var(--c-light);
+    z-index: 1;
+}
+
+#companyName {
+    position: relative;
+    font-size: 30px;
+    color: var(--c-brand-red);
+    z-index: 2;
+}
+
+#companyPhrase {
+    font-family: var(--font-secondary);
+    font-size: 24px;
+}
+
+#companySlogan {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#showPostsButton {
+    width: 90%;
+    margin: 20px 0;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--c-brand-grey);
+    box-shadow: 3px 3px 5px -3px rgba(0,0,0,0.6);
+    border-radius: 8px;
+    color: var(--c-light);
+    font-size: 24px;
+    transition: var(--transition);
+}
+
+#showPostsButton:hover {
+    background-color: var(--c-brand-red);
+}
+
+#userPosts {
+    width: 100%;
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.post-item {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--c-light);
+    border-radius: 8px;
+    box-shadow: 5px 5px 9px -3px rgba(0,0,0,0.6);
+}
+
+.post-item a {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 20px;
+    color: var(--c-brand-grey);
+    border: 2px solid var(--c-brand-grey);
+    box-shadow: 3px 3px 5px -3px rgba(0,0,0,0.6);
+    transition: var(--transition);
+}
+
+.post-item a:hover {
+    border: 2px solid var(--c-brand-red);
+    color: var(--c-brand-red);
+    font-weight: bolder;
 }
 

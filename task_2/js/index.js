@@ -1,8 +1,9 @@
 const usersList = document.getElementById("usersList");
 
-const url = new URL("https://jsonplaceholder.typicode.com/users");
+const baseUrl = new URL("https://jsonplaceholder.typicode.com/");
+const usersUrl = new URL("users", baseUrl);
 
-fetch(url)
+fetch(usersUrl)
 .then(response => response.json())
 .then((users) => showUsers(users));
 
@@ -15,7 +16,7 @@ function showUsers(users) {
         const name = document.createElement("h2");
         name.textContent = `${user.name}`;
         const link = document.createElement("a");
-        link.href = `user-details.html?user=${user.id}`;
+        link.href = `user-details.html?userId=${user.id}`;
         link.textContent = `More details`;
         const arrow = document.createElement("span");
         arrow.classList.add("arrow");
