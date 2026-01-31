@@ -6,8 +6,10 @@
 
     --c-dark: #20232a;
     --c-light: #f8f8f5;
-    --c-brand-grey: #678383;
+    --c-brand-grey: #4d7575;
     --c-brand-red: #a01d26;
+
+    --box-shadow: 5px 5px 9px -3px rgba(0,0,0,0.6);
 
     --transition: all .2s ease-in-out;
 }
@@ -24,7 +26,7 @@ main {
     min-height: 100vh;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 50px 100px;
+    padding: 50px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +40,8 @@ h1 {
     color: var(--c-light);
 }
 
+/*all users page*/
+
 #usersList {
     width: 100%;
     padding: 60px 40px;
@@ -50,10 +54,11 @@ h1 {
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 30px;
     background-color: var(--c-light);
     border-radius: 8px;
-    box-shadow: 5px 5px 9px -3px rgba(0,0,0,0.6);
+    box-shadow: var(--box-shadow);
 }
 
 .user-card p {
@@ -106,9 +111,11 @@ h1 {
     font-size: 20px;
 }
 
+/*single user page*/
+
 #userInfo {
     width: 100%;
-    padding: 30px 40px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,7 +123,7 @@ h1 {
     gap: 30px;
     background-color: var(--c-light);
     border-radius: 8px;
-    box-shadow: 5px 5px 9px -3px rgba(0,0,0,0.6);
+    box-shadow: var(--box-shadow);
 }
 
 #userInfoBox {
@@ -145,6 +152,7 @@ h1 {
 
 #userPersonalInfo svg {
     width: 20px;
+    height: 20px;
     fill: var(--c-brand-red);
 }
 
@@ -153,9 +161,24 @@ h1 {
     margin-bottom: 8px;
 }
 
-#userId {
+#userId,
+#postId {
+    padding-bottom: 5px;
     font-size: 26px;
     font-weight: 600;
+    position: relative;
+}
+
+#userId::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--c-brand-grey);
 }
 
 #userName {
@@ -253,13 +276,15 @@ h1 {
 }
 
 .post-item {
-    padding: 10px;
+    min-height: 200px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
     background-color: var(--c-light);
     border-radius: 8px;
-    box-shadow: 5px 5px 9px -3px rgba(0,0,0,0.6);
+    box-shadow: var(--box-shadow);
 }
 
 .post-item a {
@@ -282,4 +307,106 @@ h1 {
     color: var(--c-brand-red);
     font-weight: bolder;
 }
+
+/*single post page*/
+
+#postInfo {
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: var(--c-light);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+#postAuthor {
+    color: var(--c-brand-red);
+    font-size: 20px;
+}
+
+#postTitle {
+    padding: 10px 0;
+    position: relative;
+    font-family: var(--font-secondary);
+    font-size: 28px;
+    color: var(--c-brand-grey);
+    text-shadow: 1px 1px 0 rgba(4, 5, 0, 0.3);
+}
+
+#postTitle::after,
+#postTitle::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--c-brand-grey);
+}
+
+#postTitle:before {
+    top: 0;
+}
+
+#postTitle:after {
+    bottom: 0;
+}
+
+#postBody {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+#postComments {
+    width: 100%;
+    margin-top: 30px;
+    padding: 40px 20px;
+    background-color: rgba(77, 117, 117, 0.7);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+#postComments > p {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: var(--c-light);
+}
+
+#commentsList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.comment-item {
+    min-height: 350px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(248, 248, 245, 0.7);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.comment-item h3 {
+    font-family: var(--font-secondary);
+}
+
+.comment-item p {
+    font-size: 18px;
+}
+
+.comment-item p:first-of-type {
+    font-weight: 600;
+}
+
+.comment-author {
+    color: var(--c-brand-red);
+}
+
 

@@ -23,13 +23,12 @@ const userUrl = new URL(`users/${userId}/`, baseUrl);
 
 const userPostsUrl = new URL("posts", userUrl);
 
+let postLoaded = false;
+let postVisible = false;
+
 fetch(userUrl)
     .then(response => response.json())
     .then(user => showUserInfo(user));
-
-fetch(userPostsUrl)
-    .then(response => response.json())
-    .then(posts => showUserPosts(posts));
 
 function showUserInfo(user) {
     id.textContent = `User # ${user.id}`;
@@ -41,7 +40,7 @@ function showUserInfo(user) {
     phone.href = `tel:${user.phone}`;
     website.textContent = user.website;
     website.href = user.website;
-    website.target = "_blanc";
+    website.target = "_blank";
     streetSuite.textContent = `${user.address.street} Str., ${user.address.suite},`;
     city.textContent = user.address.city;
     zipcode.textContent = `ZIP: ${user.address.zipcode}`;
@@ -57,7 +56,8 @@ function showUserPosts(posts) {
         const postItem = document.createElement("div");
         postItem.classList.add("post-item");
         const title = document.createElement("h2");
-        title.textContent = `"${post.title.charAt(0).toUpperCase() + post.title.slice(1, 30)}..."`;
+        const shortTitle = post.title.length > 40 ? `${post.title.slice(1, 40)}...` : post.title.slice(1);
+        title.textContent = `"${post.title.charAt(0).toUpperCase() + shortTitle}"`;
         const link = document.createElement("a");
         link.href = `post-details.html?userId=${post.userId}&postId=${post.id}`;
         link.textContent = "Post details >";
@@ -65,3 +65,27 @@ function showUserPosts(posts) {
         userPostsList.append(postItem);
     }
 }
+
+showPostsButton.addEventListener("click", () => {
+    if (postLoaded) {
+        if (postVisible) {
+            userPostsList.style.display = "none";
+            showPostsButton.textContent = "Posts of current user";
+        } else {
+            userPostsList.style.display = "grid";
+            showPostsButton.textContent = "Hide posts";
+        }
+
+        postVisible = !postVisible;
+        return;
+    }
+
+    fetch(userPostsUrl)
+        .then(response => response.json())
+        .then(posts => {
+            showUserPosts(posts);
+            postLoaded = true;
+            postVisible = true;
+            showPostsButton.textContent = "Hide posts";
+        });
+});

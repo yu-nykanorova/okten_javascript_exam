@@ -1,0 +1,119 @@
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    /*all users page*/
+
+    #usersList {
+        padding: 10px;
+        grid-template-columns: 1fr;
+    }
+
+    .user-card {
+        gap: 15px;
+    }
+
+    .user-card h2 {
+        font-size: 18px;
+    }
+
+    .user-card a {
+        padding: 5px 8px;
+        font-size: 14px;
+    }
+
+    .user-card a span {
+        font-size: 16px;
+    }
+
+    /*single user page*/
+
+    #userInfo {
+        padding: 0 0 10px 0;
+    }
+
+    #userPersonalInfo {
+        padding: 10px;
+        border: none;
+    }
+
+    #userPersonalInfo p:not(#userId, #userSecondName) {
+        font-size: 14px;
+    }
+
+    #userPersonalInfo h2 {
+        font-size: 18px;
+    }
+
+    #userId,
+    #postId {
+        font-size: 18px;
+    }
+
+    #userCompany p:first-of-type {
+        font-size: 18px;
+    }
+
+    #userCompany h2 {
+        margin: 10px 0;
+        padding: 10px 0;
+        font-size: 18px;
+    }
+
+    #companyName {
+        font-size: 20px;
+    }
+
+    #companyPhrase {
+        font-size: 16px;
+    }
+
+    #companySlogan {
+        font-size: 14px;
+    }
+
+    #showPostsButton {
+        font-size: 16px;
+    }
+
+    #userPosts {
+        grid-template-columns: 1fr;
+    }
+
+    .post-item h2 {
+        font-size: 16px;
+    }
+
+    .post-item a {
+        font-size: 14px;
+    }
+
+    /*single post page*/
+
+    #postInfo {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    #postAuthor {
+        font-size: 14px;
+    }
+
+    #postTitle {
+        font-size: 18px;
+    }
+
+    #postBody {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    #postComments {
+        padding: 10px;
+    }
+
+    .comment-item h3 {
+        font-size: 14px;
+    }
+}

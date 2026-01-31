@@ -1,0 +1,169 @@
+@media screen and (max-width: 768px) {
+    main {
+        padding: 30px 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    /*all users page*/
+
+    #usersList {
+        padding: 30px 10px;
+        gap: 15px;
+    }
+
+    .user-card {
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .user-card p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .user-card h2 {
+        font-size: 20px;
+    }
+
+    .user-card a {
+        padding: 8px;
+        gap: 5px;
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    /*single user page*/
+
+    #userInfoBox {
+        flex-direction: column;
+    }
+
+    #userPersonalInfo {
+        padding: 20px;
+        gap: 15px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    #userPersonalInfo p:not(#userId, #userSecondName) {
+        font-size: 16px;
+    }
+
+    #userPersonalInfo h2 {
+        font-size: 20px;
+    }
+
+    #userId,
+    #postId {
+        font-size: 22px;
+    }
+
+    #userName {
+        margin: 5px 0;
+    }
+
+    #userSecondName {
+        font-size: 20px;
+    }
+
+    #userCompany {
+        padding: 15px 20px;
+        border-radius: 0;
+    }
+
+    #userCompany p:first-of-type {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    #userCompany h2 {
+        margin: 15px 0;
+        padding: 15px 0;
+        font-size: 20px;
+    }
+
+    #companyName {
+        font-size: 24px;
+    }
+
+    #companyPhrase {
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    #companySlogan {
+        font-size: 18px;
+    }
+
+    #showPostsButton {
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 20px;
+    }
+
+    #userPosts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .post-item {
+        min-height: 120px;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .post-item h2 {
+        font-size: 20px;
+    }
+
+    .post-item a {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /*single post page*/
+
+    #postInfo {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    #postAuthor {
+        font-size: 18px;
+    }
+
+    #postTitle {
+        font-size: 22px;
+    }
+
+    #postTitle::after,
+    #postTitle::before {
+        height: 1px;
+    }
+
+    #postBody {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    #postComments {
+        padding: 20px;
+    }
+
+    #commentsList {
+        grid-template-columns: 1fr;
+    }
+
+    .comment-item {
+        min-height: initial;
+    }
+
+    .comment-item h3 {
+        font-size: 16px;
+    }
+
+    .comment-item p {
+        font-size: 14px;
+    }
+}
