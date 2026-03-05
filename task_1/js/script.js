@@ -69,7 +69,7 @@ function addPairToList(item) {
 // function to sort pairs in the list by a specific criterion
 
 function sortPairs(sortKey) {
-    pairs.sort((a, b) => a[sortKey].localeCompare(b[sortKey]));
+    pairs.sort((a, b) => a[sortKey].localeCompare(b[sortKey], undefined, {numeric: true}));
     showPairsList();
 }
 
